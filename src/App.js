@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Login from './components/Login';
+import HomeView from './components/HomeView';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    view: 'home'
+  }
+
+  changeView = (view) => {
+    this.setState({ view })
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+       <Navbar changeView={this.changeView} view={this.state.view}/>
+       {this.state.view === 'login' && <Login changeView={this.changeView}/>}
+       {this.state.view === 'home' && <HomeView />}
+      </div>
+    );
+  }
 }
 
 export default App;

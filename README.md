@@ -1,68 +1,107 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Plant Match Forms Lab!
+This is a super helpful application for new plant parents and those trying to start their green thumb. Not sure if you're into a plant? Users can view plants in cards, click on them to view more information and search by their common name. In the more advanced version of the application, they can also search based on what pets they have to make sure their plants are safe for their pets. This lab will help you practice building *fully controlled forms*.
 
-## Available Scripts
+*Important Note*: You are *NOT* expected to work on the `SearchForm` component. That one is specifically for advanced deliverables. You may return to Snotify to work on the forms (search and filter). 
 
-In the project directory, you can run:
+Look out for `TODO`s in comments. Use the Core Deliverables listed below to guide you and find the `TODO`s if you're feeling stuck.
 
-### `yarn start`
+![alt text][core_image]
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[core_image]: ./public/PlantCore.gif "Core Deliverables"
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Skills and Concepts to Practice
+- Building fully controlled forms
+- Identifying where state should live and passing state values around as props
+- Diagraming and understanding a component hierarchy
+- Continued practice with event handlers
+- Practicing inverse data flow
 
-### `yarn test`
+## Setup
+After cloning down the project:
+- Run `git checkout -b yourname` in your terminal to create your own branch
+- Run `npm install` in your terminal
+- Run `npm start` and a JSON server will spin up a mock back-end API and you can access the data at `http://localhost:6001/plants`. Your react application will also start, on port `6002`. The response should contain an array of objects that are structured as follows:
+```
+[{
+"Scientific_Name": "Aphelandra squarrosa",
+"Common_Name": "Zebra Plant",
+"img_name": "zebra_plant.png",
+"Sunlight": "Part shade to full shade",
+"Moisture": "Medium",
+"Soil_Indicator": "Never dry",
+"Plant_Spread": "4.00 to 5.00 feet",
+"Plant_Height": "4.00 to 6.00 feet",
+"Indoor_Spread": "1.00 to 1.75 feet",
+"Indoor_Height": "1.00 to 2.00 feet",
+"Toxic_Dogs": false,
+"Toxic_Cats": false,
+"Plant_Habit": "Herb/Forb/Shrub",
+"Type": "Broadleaf evergreen",
+"indoor_flowering": true,
+"hanging": false,
+"Bloom_Period": "Late Summer to Fall",
+"Humidity": "High",
+"Air_Purifying": "Unknown",
+"Ph_Soil": "Acidic",
+"Bloom_Description": "Yellow"
+},
+{
+"Scientific_Name": "Calathea zebrina",
+"Common_Name": "Calathea Zebra Plant",
+"img_name": "calathea_zebra_plant.png",
+"Sunlight": "Part shade to full shade",
+"Moisture": "Medium",
+"Soil_Indicator": "Never dry",
+"Plant_Spread": "1.00 to 2.00 feet",
+"Plant_Height": "1.00 to 3.00 feet",
+"Indoor_Spread": "1.00 to 2.00 feet",
+"Indoor_Height": "1.00 to 3.00 feet",
+"Toxic_Dogs": false,
+"Toxic_Cats": false,
+"Plant_Habit": "Herb/Forb",
+"Type": "Herbaceous perennial",
+"indoor_flowering": "Rarely",
+"hanging": false,
+"Bloom_Period": "Mid Spring",
+"Humidity": "High",
+"Air_Purifying": "Unknown",
+"Ph_Soil": "Unknown",
+"Bloom_Description": "White/Purple"
+}]
+```
+- Remember to `git add .` then `git commit -m "helpful message"` and `git push` when you're done or before lecture. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## What You Already Have
+### Components
+- `App` 
+- `Navbar` 
+- `Login` 
+- `HomeView` 
+- `MatchContainer` 
+- `PlantCard` 
+- `SearchForm`: do *not* work on this component until after the core deliverables. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Additional Files
+- `data.js` stores the data for our app. It's being imported in `HomeView`.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Deliverables 
+### Core Deliverables
+While taking on each of the core deliverables, remember the essential elements of creating a controlled form. While you can make a form work in React without it being controlled, this is the right way to do it and something we're checking for. 
+- When the user clicks on `Login` they're shown the `Login` component and the form it contains. Make `Login` a fully controlled form. When it submits, it should redirect the user to the plants view. There's some code to help you with the redirect.
+- On the plants view, when a user types into the search bar, the plants should be filtered. Consider where state should live for this controlled form and how to complete that filter. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Advanced Deliverables
+If you get through all of the Core Deliverables, try your hand at the Advanced ones. Check out the gif below for how it should look. 
+- Uncomment the `SearchForm` component in `HomeView` and look at the additional options it has. Make this search form handle all of its inputs as controlled form elements and have them control what plants are rendered. It's up to you to decide where state should live. It *might not* be most ideal for it to live on `SearchForm`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Want some extra fun? 
+- Return to the `Snotify` project and complete the search and filter behavior in that application. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Resources
+- [Styled Components](https://styled-components.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
