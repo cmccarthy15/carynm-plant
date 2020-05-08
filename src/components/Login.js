@@ -14,6 +14,7 @@ class Login extends React.Component {
         return (
             <form className="vertical-flex">
                 <h2>Create an Account</h2>
+                <input placeholder="Name"/>
                 <input placeholder="Username"/>
                 <input placeholder="Password"/>
                 <input placeholder="Confirm Password"/>
