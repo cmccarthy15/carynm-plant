@@ -1,7 +1,7 @@
 # Plant Match Forms Lab!
 This is a super helpful application for new plant parents and those trying to start their green thumb. Not sure if you're into a plant? Users can view plants in cards, click on them to view more information and search by their common name. In the more advanced version of the application, they can also search based on what pets they have to make sure their plants are safe for their pets. This lab will help you practice building *fully controlled forms*.
 
-*Important Note*: You are *NOT* expected to work on the `CreatePlantForm` component until the advanced deliverables. 
+*Important Notes*: You are *NOT* expected to work on the `CreatePlantForm` component until the advanced deliverables. You'll also notice a `componentDidMount` method in `HomeView` where a fetch is invoked. You *DO NOT* need to worry about that method yet. We'll learn about that and other `lifecycle methods` on Friday. There are resources below if you feel ready to get ahead. 
 
 Look out for `TODO`s in comments. Use the Core Deliverables listed below to guide you and find the `TODO`s if you're feeling stuck.
 
@@ -110,4 +110,4 @@ If you get through all of the Core Deliverables, try your hand at the Advanced o
 
 ## Resources
 - [React Forms](https://reactjs.org/docs/forms.html)
-
+- [Get Ahead: Lifecycle Methods](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
