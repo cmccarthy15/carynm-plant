@@ -10,10 +10,12 @@ class PlantCard extends React.Component {
     }
 
     renderFront = () => {
+        const { img_name, Common_Name } = this.props;
+        /** Image conditionally renders. If the file ends in .png it is a local file, otherwise use the url */
         return (
             <>
-                <img className="card-img" src={`/imgs/${this.props.img_name}`} alt={this.props.Common_Name} />
-                <div>{this.props.Common_Name}</div>
+                <img className="card-img" src={img_name.endsWith('.png') ? `/imgs/${img_name}` : img_name} alt={Common_Name} />
+                <div>{Common_Name}</div>
             </>
         )
     }

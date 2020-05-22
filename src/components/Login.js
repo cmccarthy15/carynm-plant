@@ -4,7 +4,6 @@ class Login extends React.Component {
     state = {
         // TODO: What needs to be represented in state for a fully controlled form?
     }
-
     // TODO: What methods need to be created for a fully controlled form?
     // HINT: Use the line below to change the view when the form is submitted
     // this.props.changeView('home')

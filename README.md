@@ -1,7 +1,7 @@
 # Plant Match Forms Lab!
 This is a super helpful application for new plant parents and those trying to start their green thumb. Not sure if you're into a plant? Users can view plants in cards, click on them to view more information and search by their common name. In the more advanced version of the application, they can also search based on what pets they have to make sure their plants are safe for their pets. This lab will help you practice building *fully controlled forms*.
 
-*Important Note*: You are *NOT* expected to work on the `SearchForm` component. That one is specifically for advanced deliverables. You may return to Snotify to work on the forms (search and filter). 
+*Important Note*: You are *NOT* expected to work on the `CreatePlantForm` component until the advanced deliverables. 
 
 Look out for `TODO`s in comments. Use the Core Deliverables listed below to guide you and find the `TODO`s if you're feeling stuck.
 
@@ -15,12 +15,13 @@ Look out for `TODO`s in comments. Use the Core Deliverables listed below to guid
 - Diagraming and understanding a component hierarchy
 - Continued practice with event handlers
 - Practicing inverse data flow
+- POST fetch requests and pessimistic rendering
 
 ## Setup
 After cloning down the project:
 - Run `git checkout -b yourname` in your terminal to create your own branch
 - Run `npm install` in your terminal
-- Run `npm start` and your react application will start on port `3000`. The data you need is imported from `data.js` and looks as follows:
+- Run `npm start` and a JSON server will spin up a mock back-end API and you can access the data at `http://localhost:3001/plants`. Your react application will also start, on port `3000`. The response should contain an array of objects that are structured as follows:
 ```
 [{
 "Scientific_Name": "Aphelandra squarrosa",
@@ -80,11 +81,11 @@ After cloning down the project:
 - `HomeView` 
 - `MatchContainer` 
 - `PlantCard` 
-- `SearchForm`: do *not* work on this component until after the core deliverables. 
+- `CreatePlantForm`: do *not* work on this component until after the core deliverables. 
 
 
 ### Additional Files
-- `data.js` stores the data for our app. It's being imported in `HomeView`.  
+- `db.json` stores the data for our json-server. Check it out to make sure you know the format of the data.  
 
 
 ## Deliverables 
@@ -95,14 +96,18 @@ While taking on each of the core deliverables, remember the essential elements o
 
 ### Advanced Deliverables
 If you get through all of the Core Deliverables, try your hand at the Advanced ones. 
+- Make the `CreatePlantForm` a fully controlled form that accepts a `Common_Name`, `Scientific_Name`, and `img_name`. When submitted, it needs to persist the new plant to the backend and update the frontend pessimistically *without refreshing the page*. Make sure you post the data to the backend correctly formatted keys. 
 - Add behavior so when a user logs in, it replaces the username in `App` state to the submitted username and updates the greeting.
-- Uncomment the `SearchForm` component in `HomeView` and look at the additional options it has. Make this search form handle all of its inputs as controlled form elements and have them control what plants are rendered. It's up to you to decide where state should live. It *might not* be most ideal for it to live on `SearchForm`.
 
+
+![alt text][Advanced_image]
+
+[Advanced_image]: ./public/PlantAdvanced.gif "Core Deliverables"
 
 ## Want some extra fun? 
 - Return to the `Snotify` project and complete the search and filter behavior in that application. 
 
 
 ## Resources
-- [Styled Components](https://styled-components.com/)
+- [React Forms](https://reactjs.org/docs/forms.html)
 
